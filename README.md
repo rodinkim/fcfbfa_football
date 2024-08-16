@@ -11,10 +11,3 @@ This program is designed to bring together football enthusiasts of all skill lev
 Perfect for football fans who want to play regularly, make new friends, or improve their game!
 
 ---
-### Installation
-
-To set up the project locally, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/football-matchmaking.git

@@ -2,19 +2,10 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
-const fs = require('fs');
-const https = require('https');
-const http = require('http');
 const { createUser, authenticateUser } = require('./auth');
 
 const app = express();
 const PORT = 3000;
-
-// SSL 인증서 파일 경로
-const sslOptions = {
-  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'cert.pem'))
-};
 
 // 미들웨어 설정
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -73,15 +64,7 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// HTTP를 HTTPS로 리다이렉트
-http.createServer((req, res) => {
-  res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
-  res.end();
-}).listen(80, () => {
-  console.log('HTTP server is running on http://localhost:80 and redirecting to HTTPS');
-});
-
-// HTTPS 서버 시작
-https.createServer(sslOptions, app).listen(PORT, () => {
-  console.log(`HTTPS server is running on https://localhost:${PORT}`);
+// HTTP 서버 시작
+app.listen(PORT, () => {
+  console.log(`HTTP server is running on http://localhost:${PORT}`);
 });

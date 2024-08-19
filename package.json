@@ -1,0 +1,14 @@
+{
+  "name": "fcfbfa_football",
+  "version": "1.0.0",
+  "description": "This program is designed to bring together football enthusiasts of all skill levels and organize matches efficiently. Users can sign up, set their availability, and input their skill level or preferences. The program uses this data to automatically match players with similar skill levels and schedules, creating balanced and enjoyable teams. It also allows users to organize friendly games, tournaments, and even track individual performance. Whether you're looking for casual play or competitive matches, this platform makes it easy to connect with other players and get on the field.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
